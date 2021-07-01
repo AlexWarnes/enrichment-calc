@@ -1,6 +1,10 @@
 <script>
   import { NumberInput } from "carbon-components-svelte";
+  import ResultsContainer from "./ResultsContainer.svelte";
+  import ResultBox from "./ResultBox.svelte";
   import { VofX } from "./utils";
+  import { fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 
   // P is the product mass
   // Np is the product concentration
@@ -20,12 +24,12 @@
   $: SWF = VofX(Np) - VofX(Nw) - FF * (VofX(Nf) - VofX(Nw));
   $: F = FF * P;
   $: SWU = P * SWF;
-
 </script>
 
-
-
-<section class="swu-container">
+<section
+  class="swu-container"
+  in:fly={{ x: 200, duration: 500, easing: quintOut }}
+>
   <NumberInput
     label={`Feed Concentration (${(Nf * 100).toFixed(2)}%)`}
     helperText="Natural Uranium is ~0.00711 U235"
@@ -52,10 +56,14 @@
   />
   <NumberInput label="Product Mass" bind:value={P} />
 
-  <div class="result">
-    <h4><strong>Feed Mass</strong>: {F.toFixed()}</h4>
-    <h4><strong>SWU</strong>: {SWU.toFixed()}</h4>
-  </div>
+  <ResultsContainer>
+    <ResultBox>
+      <span><strong>Feed Mass</strong>: {F.toFixed()}</span>
+    </ResultBox>
+    <ResultBox>
+      <span><strong>SWU</strong>: {SWU.toFixed()}</span>
+    </ResultBox>
+  </ResultsContainer>
 </section>
 
 <style>

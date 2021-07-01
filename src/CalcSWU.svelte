@@ -1,6 +1,10 @@
 <script>
   import { NumberInput } from "carbon-components-svelte";
+  import ResultsContainer from "./ResultsContainer.svelte";
+  import ResultBox from "./ResultBox.svelte";
   import { VofX } from "./utils";
+  import { fly } from "svelte/transition";
+  import { quintOut } from "svelte/easing";
 
   // P is the product mass
   // Np is the product concentration
@@ -19,10 +23,12 @@
 
   // Calculate SWU
   $: SWU = P * VofX(Np) + W * VofX(Nw) - F * VofX(Nf);
-
 </script>
 
-<section class="swu-container">
+<section
+  class="swu-container"
+  in:fly={{ x: 200, duration: 500, easing: quintOut }}
+>
   <NumberInput label="Feed Mass" bind:value={F} />
 
   <NumberInput
@@ -35,13 +41,13 @@
   />
 
   <NumberInput
-  label={`Waste Concentration (${(Nw * 100).toFixed(2)}%)`}
-  helperText="Waste concentration will always be smaller than that of the feed. Typically in the range of 0.002-0.0003 of U-235."
-  min={0.0001}
-  max={0.9999}
-  step={0.0001}
-  bind:value={Nw}
-/>
+    label={`Waste Concentration (${(Nw * 100).toFixed(2)}%)`}
+    helperText="Waste concentration will always be smaller than that of the feed. Typically in the range of 0.002-0.0003 of U-235."
+    min={0.0001}
+    max={0.9999}
+    step={0.0001}
+    bind:value={Nw}
+  />
 
   <NumberInput label="Product Mass" bind:value={P} />
 
@@ -54,10 +60,11 @@
     bind:value={Np}
   />
 
-  <div class="result">
-    <h4><strong>SWU</strong>: {SWU.toFixed()}</h4>
-  </div>
-
+  <ResultsContainer>
+    <ResultBox>
+      <span><strong>SWU</strong>: {SWU.toFixed()}</span>
+    </ResultBox>
+  </ResultsContainer>
 </section>
 
 <style>
