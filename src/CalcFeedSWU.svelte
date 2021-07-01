@@ -28,7 +28,7 @@
 
 <section
   class="swu-container"
-  in:fly={{ x: 200, duration: 500, easing: quintOut }}
+  in:fly={{ y: 200, duration: 500, easing: quintOut }}
 >
   <NumberInput
     label={`Feed Concentration (${(Nf * 100).toFixed(2)}%)`}

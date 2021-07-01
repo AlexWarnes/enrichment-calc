@@ -71,6 +71,7 @@ import { onMount } from "svelte";
 <style>
   main {
     max-width: 800px;
+    /* overflow: hidden; */
   }
   .intro {
     width: 90%;
@@ -89,9 +90,10 @@ import { onMount } from "svelte";
   .btn-wrapper {
     margin: 0 0 0 auto;
   }
-  .btn-wrapper :global(svg) {
+
+  /* .btn-wrapper :global(svg) {
     fill: #ffffff !important;
-  }
+  } */
   .btn-wrapper :global(path) {
     fill: #ffffff !important;
   }

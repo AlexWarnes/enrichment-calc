@@ -26,7 +26,7 @@
   $: F = FF * P;
 </script>
 
-<section class="swu-container" in:fly={{ x: 200, duration: 500, easing: quintOut  }}>
+<section class="swu-container" in:fly={{ y: 200, duration: 500, easing: quintOut  }}>
   <NumberInput
     label={`Feed Concentration (${(Nf * 100).toFixed(2)}%)`}
     helperText="Natural Uranium is ~0.00711 U235"
