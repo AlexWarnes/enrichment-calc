@@ -56,20 +56,31 @@ section.swu-container .bx--form-item {
 }
 
 .result {
-  width: 75%;
+width: 100%;
   margin: 18px 0 0;
   padding: 12px;
-  background: #1162fe;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.swu-container h4 {
+
+.result h4 {
   font-size: 1.25em;
+  border-radius: 50px;
+  padding: 12px 24px;
+  background: #1162fe;
 }
 
 /* CARBON OVERRIDES */
-.bx--content-switcher {
+/* .bx--content-switcher {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
+} */
+.bx--btn--ghost.bx--btn--icon-only[disabled], .bx--btn.bx--btn--icon-only.bx--tooltip__trigger[disabled] {
+  cursor: pointer !important;
 }
 
 /* MOBILE */
@@ -80,6 +91,9 @@ section.swu-container .bx--form-item {
   .result {
     width: 90%;
     margin: 18px auto 0;
+  }
+  .result h4 {
+    font-size: .875rem;
   }
   section.swu-container .bx--form-item {
    width: 90%;

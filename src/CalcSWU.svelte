@@ -1,11 +1,14 @@
 <script>
-  import { NumberInput, Slider } from "carbon-components-svelte";
+  import { NumberInput } from "carbon-components-svelte";
+  import { VofX } from "./utils";
 
-  // V(x)=(2x-1) * ln(x/(1-x)) where x is a given concentration
-  const VofX = (x) => {
-    let output = (2 * x - 1) * Math.log(x / (1 - x));
-    return output;
-  };
+  // P is the product mass
+  // Np is the product concentration
+  // W is the waste mass
+  // Nw is the waste concentration
+  // F is the feed mass
+  // Nf is the feed concentration
+  // V(x) is the value function
 
   let F = 102;
   let Nf = 0.00711;
@@ -15,22 +18,15 @@
   let Np = 0.045;
 
   // Calculate SWU
-  // SWU = P * V(Np) + W * V(Nw) – F * V(Nf)
   $: SWU = P * VofX(Np) + W * VofX(Nw) - F * VofX(Nf);
 
-  // P is the product amount,
-  // Np is the product concentration,
-  // W is the waste amount,
-  // Nw is the waste concentration,
-  // F is the feed amount,
-  // Nf is the feed concentration,
-  // V(x) is a value function
 </script>
 
 <section class="swu-container">
-  <NumberInput label="Feed Amount" bind:value={F} />
+  <NumberInput label="Feed Mass" bind:value={F} />
+
   <NumberInput
-    label="Feed Concentration"
+    label={`Feed Concentration (${(Nf * 100).toFixed(2)}%)`}
     helperText="Natural Uranium is ~0.00711 U235"
     min={0.0001}
     max={0.9999}
@@ -38,9 +34,8 @@
     bind:value={Nf}
   />
 
-  <!-- <NumberInput label="Waste Amount" bind:value={W} /> -->
   <NumberInput
-  label="Waste Concentration"
+  label={`Waste Concentration (${(Nw * 100).toFixed(2)}%)`}
   helperText="Waste concentration will always be smaller than that of the feed. Typically in the range of 0.002-0.0003 of U-235."
   min={0.0001}
   max={0.9999}
@@ -48,9 +43,10 @@
   bind:value={Nw}
 />
 
-  <NumberInput label="Product Amount" bind:value={P} />
+  <NumberInput label="Product Mass" bind:value={P} />
+
   <NumberInput
-    label="Product Concentration"
+    label={`Product Concentration (${(Np * 100).toFixed(2)}%)`}
     helperText="The Product (or enriched) material with a desired concentration of the desired isotope, which is always higher than that of the feed material"
     min={0.0001}
     max={0.9999}
