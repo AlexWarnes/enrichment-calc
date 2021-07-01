@@ -79,7 +79,7 @@
   <div class="bottom-row">
     <Button
       kind="tertiary"
-      href="https://github.com/AlexWarnes"
+      href="https://github.com/AlexWarnes/enrichment-calc"
       tooltipPosition="top"
       tooltipAlignment="center"
       iconDescription="GitHub"

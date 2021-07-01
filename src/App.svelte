@@ -21,7 +21,7 @@
   <span class="btn-wrapper">
     <Button
       kind="ghost"
-      href="https://github.com/AlexWarnes"
+      href="https://github.com/AlexWarnes/enrichment-calc"
       tooltipPosition="top"
       tooltipAlignment="center"
       iconDescription="GitHub"
