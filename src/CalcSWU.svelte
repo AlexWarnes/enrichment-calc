@@ -36,7 +36,7 @@
     helperText="Natural Uranium is ~0.00711 U235"
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Nf}
   />
 
@@ -45,7 +45,7 @@
     helperText="Waste concentration will always be smaller than that of the feed. Typically in the range of 0.002-0.0003 of U-235."
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Nw}
   />
 
@@ -56,7 +56,7 @@
     helperText="The Product (or enriched) material with a desired concentration of the desired isotope, which is always higher than that of the feed material"
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Np}
   />
 

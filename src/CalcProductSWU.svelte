@@ -24,6 +24,10 @@
   $: SWF = VofX(Np) - VofX(Nw) - FF * (VofX(Nf) - VofX(Nw));
   $: P = F / FF;
   $: SWU = P * SWF;
+
+  const test = (e) => {
+    console.log("It's happening")
+  }
 </script>
 
 <section class="swu-container" in:fly={{ y: 200, duration: 500, easing: quintOut  }}>
@@ -32,7 +36,7 @@
     helperText="Natural Uranium is ~0.00711 U235"
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Nf}
   />
   <NumberInput
@@ -40,7 +44,7 @@
     helperText="Waste concentration will always be smaller than that of the feed. Typically in the range of 0.002-0.0003 of U-235."
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Nw}
   />
   <NumberInput
@@ -48,7 +52,7 @@
     helperText="The Product (or enriched) material with a desired concentration of the desired isotope, which is always higher than that of the feed material"
     min={0.0001}
     max={0.9999}
-    step={0.0001}
+    step={0.001}
     bind:value={Np}
   />
   <NumberInput label="Feed Mass" bind:value={F} />
