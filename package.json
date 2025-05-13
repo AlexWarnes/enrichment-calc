@@ -1,27 +1,27 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@rollup/plugin-node-resolve": "^11.0.0",
-    "carbon-components-svelte": "^0.38.0",
-    "carbon-icons-svelte": "^10.33.0",
-    "carbon-pictograms-svelte": "^11.3.0",
-    "rollup": "^2.3.4",
-    "rollup-plugin-css-only": "^3.1.0",
-    "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.0.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "^3.0.0"
-  },
-  "dependencies": {
-    "rxjs": "^7.1.0",
-    "sirv-cli": "^1.0.0"
-  }
+	"name": "enrichment-calc",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.20.7",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"svelte": "^5.28.2",
+		"svelte-check": "^4.1.6",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.3"
+	},
+	"dependencies": {
+		"@lucide/svelte": "^0.503.0",
+		"svelte-tweakpane-ui": "^1.5.6"
+	}
 }

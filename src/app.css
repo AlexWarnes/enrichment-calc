@@ -1,0 +1,112 @@
+:root {
+  --bg-400: #1d232a;
+  --bg-600: #191e24;
+  --bg-800: #0c0f13;
+	--bg-tweak-light: #37383d;
+	--bg-tweak-dark: #28292e;
+  --bg-transparent: #bbbcc41a;
+	--bg-transparent-hover: #bbbcc426;
+  --bg-light: #eeeff2;
+	--bg-light-hover: #f7f7f7;
+  
+  --primary: #56bb8a;
+  --primary-hover: #5bc592;
+  --secondary: #6898ff;
+	--warning: #be5454;
+
+  --color: #fafafd;
+  --color-secondary: #a6adbb;
+
+  --shadow: 0 1px 1px rgb(0 0 0 / 25%), 0 2px 6px rgb(0 0 0 / 15%);
+
+	--u238: #FCFF71;
+	--u235: #ff4e60;
+	--feed: #4EFFAA;
+	--feed-rgb: 78, 255, 170;
+	--product: #514EFF;
+	--waste: #a7b4fd;
+	--invalid: #9592a9;
+}
+
+html,
+body,
+#sk-body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/* font-family: 'Inter', sans-serif; */
+	font-family: 'Roboto Mono', monospace;
+  background-color: #1a1b1e;
+  color: var(--color);
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.4'%3E%3Ccircle r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+a {
+	color: #5f9ea0;
+	/* Styling for link icons */
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 0.25rem;
+}
+
+.panel {
+	padding: 0.625rem;
+	font-size: 0.75rem;
+	background-color: var(--bg-400);
+	border-radius: 6px;
+}
+
+button {
+	border: none;
+	border-radius: 0.125rem;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1.25rem;
+	font-size: 0.75rem;
+	font-family: 'Roboto Mono', monospace;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+}
+button:enabled {
+	cursor: pointer;
+}
+
+button.primary {
+	background-color: var(--primary);
+}
+button.primary:enabled:hover {
+	background-color: var(--primary-hover);
+}
+button.secondary {
+	background-color: var(--bg-light);
+}
+button.secondary:enabled:hover {
+	background-color: var(--bg-light-hover);
+}
+button.tertiary {
+	color: var(--color-secondary);
+	background-color: var(--bg-transparent);
+}
+button.tertiary:enabled:hover {
+	background-color: var(--bg-transparent-hover);
+}
+
+input, select {
+	margin: 0.325rem 0 0;
+}
+
+.flex-spacer {
+	flex-grow: 1;
+}
