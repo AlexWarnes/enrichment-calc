@@ -26,6 +26,14 @@
       date: "",
     },
     {
+      title: "Nuclear Fuel Cycle / Uranium Enrichment",
+      subtitle: "",
+      authors:
+        "World Nuclear Association",
+      url: "https://world-nuclear.org/information-library/nuclear-fuel-cycle/conversion-enrichment-and-fabrication/uranium-enrichment",
+      date: "6 June 2025",
+    },
+    {
       title: "SWU Calculator",
       subtitle: "",
       authors: "URENCO",
@@ -59,7 +67,7 @@
 </script>
 
 <div class="content">
-  <h1>References</h1>
+  <h1 class="card">References</h1>
   {#each references as R}
     <div class="card panel">
       <h5 class="title">{R.title}</h5>

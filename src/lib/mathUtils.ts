@@ -16,6 +16,6 @@ export const defaultValues = {
 }
 
 export const displayPct = (v: number): string => {
-	return (v * 100).toFixed(2) + '%'
+	return (v * 100).toFixed(3) + '%'
 }
 

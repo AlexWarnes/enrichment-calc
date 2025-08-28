@@ -32,6 +32,9 @@
       <button class="secondary" onclick={() => addCalculator("FeedProduct", {})}
         >Feed and Product</button
       >
+      <button class="secondary" onclick={() => addCalculator("SWU", {})}
+        >SWU</button
+      >
     </div>
   </div>
 </div>

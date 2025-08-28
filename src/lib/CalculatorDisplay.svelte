@@ -170,8 +170,8 @@
     <Wheel
       bind:value={calc.Nw}
       label="Waste Enrichment"
-      format={(v) => (v * 100).toFixed(2) + "%"}
-      step={0.001}
+      format={(v) => (v * 100).toFixed(3) + "%"}
+      step={0.0001}
       min={0.001}
       max={1}
       pointerScale={-0.001}
